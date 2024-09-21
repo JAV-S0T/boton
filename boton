@@ -1,26 +1,31 @@
-void boton (){
-  fill(227,31,31);
-  rect (120, 120, 90, 90) ;
-  noFill() ;
+void boton(){
+  background(96,236,239);
+  fill(253,77,77);
+  rect(130,130,60,60);
+  noFill();
   fill(0,0,0);
-  textWidth(10);
-  text ("Pulsa aquí", 121, 170);
+  textSize(9);
+  text("Pulse aquí",132,165);
 }
 
-void mecanicas_boton() {
-  if (buttonPressed && LEFTBUTTON == true) {
-    
+void otra(){
+  background(23,231,69);
+  text("Pulsó el botón",130,130);
+}
+
+void mecanicas_boton(){
+  double x = mouseX;
+  double y = mouseY;
+  if (mousePressed)
+    if (mouseButton == LEFTBUTTON){
+        if (x>130 && y>130 && x<190 && y<190){
+          otra();
+        }else{
+          boton();
+      }
+    }
   }
-}
 
-void mecanicas_raton() {
-  
-  if (mousePressed) {
-    if ()
-  }
-}
-
-void main() {
-  boton();
-  mecanicas_boton();
+void main(){
+  animate(mecanicas_boton);
 }
