@@ -1,31 +1,35 @@
-void boton(){
-  background(96,236,239);
-  fill(253,77,77);
-  rect(130,130,60,60);
-  noFill();
-  fill(0,0,0);
-  textSize(9);
-  text("Pulse aquí",132,165);
+boolean a = true;
+
+void main () {
+  rectangulo ();
+  animate (mecanica);
+
 }
 
-void otra(){
-  background(23,231,69);
-  text("Pulsó el botón",130,130);
+void rectangulo () {
+  rect (110,110,100,100);
 }
 
-void mecanicas_boton(){
-  double x = mouseX;
-  double y = mouseY;
-  if (mousePressed)
-    if (mouseButton == LEFTBUTTON){
-        if (x>130 && y>130 && x<190 && y<190){
-          otra();
-        }else{
-          boton();
-      }
-    }
+void gogo(){
+    background(199,94,94);
+    rect (110,110,100,100);
+  	
+}
+void mecanica (){
+  if (mousePressed){
+    if (a == true){
+      if(mouseX > 110 && mouseX < 210 && mouseY > 110 && mouseY < 210){
+    a = false;
+   
+  }}}
+  if (a == false){
+     background(30,211,70);
   }
+  if(!mousePressed){
+    gogo();
+    a = true;
+  }
+	}
 
-void main(){
-  animate(mecanicas_boton);
-}
+background(199,94,94); 
+  
